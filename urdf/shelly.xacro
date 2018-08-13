@@ -1,0 +1,340 @@
+<?xml version='1.0'?>
+
+<robot name="shelly" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+
+<!-- ################### XACRO Definitions ############################# -->
+<!-- ################### XACRO Definitions ############################# -->
+<!-- ################### XACRO Definitions ############################# -->
+<!-- ################### XACRO Definitions ############################# -->
+
+<xacro:property name="min_mass" value="0.1"/>
+
+<!-- ################### XACRO Origins ############################# -->
+ <xacro:macro name="shell_origin">
+     <origin xyz="0 0 0" rpy="0 0 -1.5707" />
+ </xacro:macro>
+ 
+  <xacro:macro name="cylinder_origin">
+     <origin xyz="0 0 0.05" rpy="0 -1.5707 0" />
+ </xacro:macro>
+ 
+ <xacro:macro name="zero_origin">
+     <origin xyz="0 0 0" rpy="0 0 0" />
+ </xacro:macro>
+
+<xacro:macro name="wheel_link_origin">
+    <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+</xacro:macro>
+
+<!-- ################### XACRO Inertias ############################# -->
+
+<xacro:macro name="default_inertia">
+    <inertia
+        ixx="0.1" ixy="0" ixz="0"
+        iyy="0.1" iyz="0"
+        izz="0.1"
+      />
+</xacro:macro>
+
+<xacro:macro name="cylinder_inertia">
+    <inertia
+        ixx="0.2375" ixy="0" ixz="0"
+        iyy="0.075" iyz="0"
+        izz="0.2375"
+      />
+</xacro:macro>
+
+<xacro:macro name="min_inertia">
+    <inertia
+        ixx="1e-6" ixy="0" ixz="0"
+        iyy="1e-6" iyz="0"
+        izz="1e-6"
+      />
+</xacro:macro>
+
+<!-- ################### MACRO Generators ############################# -->
+<!-- ################### MACRO Generators ############################# -->
+<!-- ################### MACRO Generators ############################# -->
+<!-- ################### MACRO Generators ############################# -->
+
+<xacro:macro name="generate_gazebo_reference" params="link_name color">
+    <gazebo reference="${link_name}">
+        <!-- <kp>10000000.0</kp>
+        <kd>1.0</kd>
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2> -->
+        <material>Gazebo/${color}</material>
+    </gazebo>
+</xacro:macro>
+
+<xacro:macro name="generate_geometry" params="shape radius=0 length=0 x=0 y=0 z=0">
+<!--UNITS IN METERS-->
+<!--<cylinder radius="" length=""/>-->
+<!--<box x="" y="" z="" />-->
+<!--<sphere radius=""/> -->
+
+    <geometry>
+
+        <xacro:if value="${shape == 'box'}">
+            <box size="${x} ${y} ${z}"/>
+        </xacro:if>
+        <xacro:if value="${shape == 'cylinder'}">
+            <cylinder length="${length}" radius="${radius}"/>
+        </xacro:if>
+        <xacro:if value="${shape == 'sphere'}">
+            <sphere radius="${radius}"/>
+        </xacro:if>
+
+    </geometry>
+
+</xacro:macro>
+
+
+<xacro:macro name="generate_wheel_link" params="side">
+    <link name="${side}_wheel">
+       <inertial>
+           <xacro:wheel_link_origin/>
+           <mass value="5"/>
+           <xacro:default_inertia/>
+       </inertial>
+       <collision>
+             <xacro:wheel_link_origin/>
+             <xacro:generate_geometry shape="cylinder" radius="0.1" length="0.05" />
+       </collision>
+       <visual>
+             <xacro:wheel_link_origin/>
+             <!--<xacro:generate_geometry shape="cylinder" radius="0.1" length="0.05" />-->
+             <xacro:generate_geometry shape="sphere" radius="0.001"/>
+       </visual>
+   </link>
+
+   <!--<xacro:generate_gazebo_reference link_name="${side}_wheel" color="Green"/>-->
+
+</xacro:macro>
+
+
+<xacro:macro name="generate_wheel_joint" params="side">
+    <joint type="continuous" name="${side}_wheel_hinge">
+
+        <xacro:if value="${side == 'left'}">
+            <origin xyz="0 0.15 0" rpy="0 0 0"/>
+        </xacro:if>
+
+        <xacro:if value="${side == 'right'}">
+            <origin xyz="0 -0.15 0" rpy="0 0 0"/>
+        </xacro:if>
+
+        <parent link="chassis"/>
+        <child link="${side}_wheel"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+        <limit effort="10000" velocity="1000"/>
+        <joint_properties damping="1.0" friction="1.0"/>
+    </joint>
+</xacro:macro>
+
+
+
+
+ <!-- ################### ROBOT Definitions ############################# -->
+ <!-- ################### ROBOT Definitions ############################# -->
+ <!-- ################### ROBOT Definitions ############################# -->
+ <!-- ################### ROBOT Definitions ############################# -->
+
+<!--Includes Sensor Plugins defined in .gazebo file-->
+<xacro:include filename="$(find shelly)/urdf/shelly.gazebo" />
+
+<link name="robot_footprint"></link>
+
+  <joint name="robot_footprint_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="robot_footprint"/>
+      <child link="chassis" />
+  </joint>
+
+<!-- BEGIN Chassis -->
+  <link name='chassis'>
+      <pose>0 0 0 0 0 0</pose>
+
+      <inertial>
+          <mass value="15.0"/>
+          <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+          <!--  <xacro:default_inertia/> -->
+          <xacro:cylinder_inertia/>
+    </inertial>
+
+    <collision name='collision'>
+        <xacro:cylinder_origin/>
+        <geometry>
+            <!-- <box size=".4 .2 .1"/> -->
+            <cylinder radius="0.1" length="0.4"/>
+        </geometry>
+    </collision>
+
+    <visual name='chassis_visual'>
+        <xacro:shell_origin/>
+        <geometry>
+            <!--<box size=".4 .2 .1"/>-->
+            <!-- <cylinder radius="0.1" length="0.4"/> -->
+            <mesh filename="package://shelly/models/meshes/green_shell.dae"/> 
+        </geometry>
+    </visual>
+
+    <collision name='back_caster_collision'>
+        <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+        <geometry>
+            <sphere radius="0.0499"/>
+        </geometry>
+        <surface>
+              <friction>
+                    <ode>
+                        <mu>0</mu>
+                        <mu2>0</mu2>
+                        <slip1>1.0</slip1>
+                        <slip2>1.0</slip2>
+                    </ode>
+              </friction>
+        </surface>
+    </collision>
+
+    <visual name='back_caster_visual'>
+        <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+        <geometry>
+            <sphere radius="0.001"/>
+        </geometry>
+    </visual>
+
+    <collision name='front_caster_collision'>
+        <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+        <geometry>
+            <sphere radius="0.0499"/>
+        </geometry>
+        <surface>
+              <friction>
+                    <ode>
+                        <mu>0</mu>
+                        <mu2>0</mu2>
+                        <slip1>1.0</slip1>
+                        <slip2>1.0</slip2>
+                    </ode>
+              </friction>
+        </surface>
+    </collision>
+
+    <visual name='front_caster_visual'>
+        <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+        <geometry>
+            <sphere radius="0.001"/>
+        </geometry>
+    </visual>
+</link>
+<!-- END Chassis -->
+
+<!-- ################### LINK Definitions ############################# -->
+<!-- ################### LINK Definitions ############################# -->
+<!-- ################### LINK Definitions ############################# -->
+<!-- ################### LINK Definitions ############################# -->
+
+    <xacro:generate_wheel_link side="right"/>
+    <xacro:generate_wheel_link side="left"/>
+
+
+
+<!-- ################### JOINT Definitions ############################# -->
+<!-- ################### JOINT Definitions ############################# -->
+<!-- ################### JOINT Definitions ############################# -->
+<!-- ################### JOINT Definitions ############################# -->
+
+    <xacro:generate_wheel_joint side="right"/>
+    <xacro:generate_wheel_joint side="left"/>
+
+
+
+
+
+
+ <!--################### SENSOR Definitions ############################# -->
+    <!--<link name="camera">-->
+    <!--    <inertial>-->
+    <!--        <xacro:zero_origin/>-->
+            <!--<mass value="${min_mass}"/>-->
+    <!--        <mass value="0.1"/>-->
+    <!--        <xacro:default_inertia/>-->
+    <!--    </inertial>-->
+    <!--    <collision>-->
+    <!--        <xacro:zero_origin/>-->
+    <!--        <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>-->
+    <!--    </collision>-->
+    <!--    <visual>-->
+    <!--        <xacro:zero_origin/>-->
+            <!--<xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>-->
+    <!--        <xacro:generate_geometry shape="sphere" radius="0.001"/>-->
+    <!--    </visual>-->
+    <!--</link>-->
+
+    <!--<joint name="camera_joint" type="fixed">-->
+    <!--    <origin xyz="0.2 0 0" rpy="0 0 0"/>-->
+    <!--    <parent link="chassis"/>-->
+    <!--    <child link="camera"/>-->
+    <!--</joint>-->
+    
+    <link name="kinect">
+        <inertial>
+            <xacro:zero_origin/>
+            <!--<mass value="${min_mass}"/>-->
+            <mass value="0.1"/>
+            <xacro:default_inertia/>
+        </inertial>
+        <collision>
+            <xacro:zero_origin/>
+            <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>
+        </collision>
+        <visual>
+            <xacro:zero_origin/>
+            <geometry>
+                <mesh filename="package://rtab/kinect/meshes/kinect.dae"/>
+            </geometry>
+            <!--<xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>-->
+            <!--<xacro:generate_geometry shape="sphere" radius="0.001"/>-->
+        </visual>
+    </link>
+
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="0.2 0 0" rpy="0 0 0"/>
+        <parent link="chassis"/>
+        <child link="kinect"/>
+    </joint>
+
+    <link name="hokuyo">
+        <inertial>
+            <xacro:zero_origin/>
+            <!--<mass value="${min_mass}"/>-->
+            <mass value="0.1"/>
+            <xacro:default_inertia/>
+        </inertial>
+        <collision>
+            <xacro:zero_origin/>
+            <xacro:generate_geometry shape="box" x="0.1" y="0.1" z="0.1"/>
+        </collision>
+        <visual>
+            <xacro:zero_origin/>
+            <xacro:generate_geometry shape="sphere" radius="0.001"/>
+            <!--
+            <geometry>
+                <mesh filename="package://shelly/models/meshes/hokuyo.dae"/>
+            </geometry>
+            -->
+        </visual>
+    </link>
+
+    <joint name="hokuyo_joint" type="fixed">
+        <origin xyz="0.15 0 0.15" rpy="0 0 0"/>
+        <parent link="chassis"/>
+        <child link="hokuyo"/>
+    </joint>
+
+
+
+
+</robot>
