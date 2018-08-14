@@ -177,7 +177,7 @@
         <geometry>
             <!--<box size=".4 .2 .1"/>-->
             <!-- <cylinder radius="0.1" length="0.4"/> -->
-            <mesh filename="package://rtab/models/meshes/green_shell.dae"/> 
+            <mesh filename="package://rtab/models/green_shell.dae"/> 
         </geometry>
     </visual>
 
@@ -293,7 +293,7 @@
         <visual>
             <xacro:zero_origin/>
             <geometry>
-                <mesh filename="package://rtab/kinect/meshes/kinect.dae"/>
+                <mesh filename="package://rtab/models/kinect/meshes/kinect.dae"/>
             </geometry>
             <!--<xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>-->
             <!--<xacro:generate_geometry shape="sphere" radius="0.001"/>-->
