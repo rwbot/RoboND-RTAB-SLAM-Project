@@ -2,7 +2,7 @@
 
 <launch>
 
-    <include file="$(find rtab)/launch/robot_description.launch"/>
+    <!--<include file="$(find rtab)/launch/robot_description.launch"/>-->
 
 
    <!--the empty_world.launch file from the gazebo_ros package. -->

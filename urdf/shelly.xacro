@@ -143,7 +143,7 @@
  <!-- ################### ROBOT Definitions ############################# -->
 
 <!--Includes Sensor Plugins defined in .gazebo file-->
-<xacro:include filename="$(find shelly)/urdf/shelly.gazebo" />
+<xacro:include filename="$(find rtab)/urdf/shelly.gazebo" />
 
 <link name="robot_footprint"></link>
 
@@ -177,7 +177,7 @@
         <geometry>
             <!--<box size=".4 .2 .1"/>-->
             <!-- <cylinder radius="0.1" length="0.4"/> -->
-            <mesh filename="package://shelly/models/meshes/green_shell.dae"/> 
+            <mesh filename="package://rtab/models/meshes/green_shell.dae"/> 
         </geometry>
     </visual>
 
@@ -322,7 +322,7 @@
             <xacro:generate_geometry shape="sphere" radius="0.001"/>
             <!--
             <geometry>
-                <mesh filename="package://shelly/models/meshes/hokuyo.dae"/>
+                <mesh filename="package://rtab/models/meshes/hokuyo.dae"/>
             </geometry>
             -->
         </visual>
