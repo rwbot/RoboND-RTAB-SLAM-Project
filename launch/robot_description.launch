@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- NOW DONE IN THE ROBOT'S LAUNCH FILE -->
+
+    <!-- send urdf to param server -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rtab)/urdf/shelly.xacro'" />
+  
+
+    <!--spawn a robot in gazebo world-->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" clear_params="true" output="screen" args="-urdf -param robot_description -model shelly" />
+    
+
+
+      <!--Start jointstate publisher & robotstate publisher. These publish the TFs of the URDF of the robot links and joints.-->
+    <!--Send fake joint values-->
+    <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher" clear_params="true">
+        <param name="use_gui" value="false" />
+    </node>
+    
+    <!--Combine joint values-->
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" clear_params="true" />
+
+
+</launch>
+
+
+
+
+<!-- Experiment to set initial pose of robot-->
+
+    <!-- Robot pose -->
+    <!--<arg name="x" default="0"/>-->
+    <!--<arg name="y" default="0"/>-->
+    <!--<arg name="z" default="0"/>-->
+    <!--<arg name="roll" default="0"/>-->
+    <!--<arg name="pitch" default="0"/>-->
+    <!--<arg name="yaw" default="0.7"/>-->
+    
+    <!--<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" clear_params="true" output="screen" args="-urdf -param robot_description -model shelly -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />-->
+    
+    
+    <!--<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" clear_params="true" output="screen" args="-urdf -param robot_description -model shelly" />-->
+    
+    <!--<node pkg="rosservice" type="rosservice" name="set_robot_initial_pose" args="call /gazebo/get_world_properties"/>-->
