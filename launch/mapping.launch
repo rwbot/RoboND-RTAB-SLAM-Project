@@ -35,7 +35,7 @@
       <param name="Reg/Force3DoF" type="string" value="true"/>      
 
       <!-- Loop Closure Detection -->
-    <!-- 0=SURF 1=SIFT 2=ORB 3=FAST/FREAK 4=FAST/BRIEF 5=GFTT/FREAK 6=GFTT/BRIEF 7=BRISK 8=GFTT/ORB 9=KAZE →
+    <!-- 0=SURF 1=SIFT 2=ORB 3=FAST/FREAK 4=FAST/BRIEF 5=GFTT/FREAK 6=GFTT/BRIEF 7=BRISK 8=GFTT/ORB 9=KAZE -->
 <param name="Kp/DetectorStrategy" type="string" value="0"/> 
 
 <!-- Maximum visual words per image (bag-of-words) -->
