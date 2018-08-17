@@ -1,0 +1,7 @@
+[ WARN] [1534477547.015652407, 195.812000000]: /rtabmap/rtabmap: Did not receive data since 5 seconds! Make sure the input topics are published ("$ rostopic hz my_topic") and the timestamps in their header are set. If topics are coming from different computers, make sure the clocks of the computers are synchronized ("ntpdate"). If topics are not published at the same rate, you could increase "queue_size" parameter (current=20).
+/rtabmap/rtabmap subscribed to (approx sync):
+   /camera/rgb/image_raw,
+   /camera/depth/image_raw,
+   /camera/rgb/camera_info,
+   /shelly/laser/scan
+

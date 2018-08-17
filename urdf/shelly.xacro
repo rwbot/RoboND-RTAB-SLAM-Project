@@ -279,7 +279,8 @@
     <!--    <child link="camera"/>-->
     <!--</joint>-->
 
-    <link name="camera_link">
+    <!--<link name="camera_link">-->
+    <link name="camera_rgb_frame">
         <inertial>
             <xacro:zero_origin/>
             <!--<mass value="${min_mass}"/>-->
@@ -303,16 +304,18 @@
     <joint name="camera_joint" type="fixed">
         <origin xyz="0.2 0 0" rpy="0 0 0"/>
         <parent link="chassis"/>
-        <child link="camera_link"/>
+        <!--<child link="camera_link"/>-->
+        <child link="camera_rgb_frame"/>
     </joint>
 
-    <!-- Kinect RGB Camera Frame -->
+    <!-- Kinect RGB Camera Frame 
     <link name="camera_rgb_frame"/>
     <joint name="camera_rgb_joint" type="fixed">
       <origin xyz="0 0 0" rpy="-1.571 0 -1.571"/>
       <parent link="camera_link"/>
       <child link="camera_rgb_frame"/>
     </joint>
+-->
 
         <!-- Kinect RGB Camera Optical Frame -->
         <link name="camera_rgb_optical_frame"/>
@@ -326,7 +329,8 @@
     <link name="camera_depth_frame"/>
     <joint name="camera_depth_joint" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <parent link="camera_link"/>
+      <!-- <parent link="camera_link"/> -->
+      <parent link="camera_rgb_frame"/>
       <child link="camera_depth_frame"/>
     </joint>
 
