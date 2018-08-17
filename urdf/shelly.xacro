@@ -15,11 +15,11 @@
  <xacro:macro name="shell_origin">
      <origin xyz="0 0 0" rpy="0 0 -1.5707" />
  </xacro:macro>
- 
+
   <xacro:macro name="cylinder_origin">
      <origin xyz="0 0 0.05" rpy="0 -1.5707 0" />
  </xacro:macro>
- 
+
  <xacro:macro name="zero_origin">
      <origin xyz="0 0 0" rpy="0 0 0" />
  </xacro:macro>
@@ -177,7 +177,7 @@
         <geometry>
             <!--<box size=".4 .2 .1"/>-->
             <!-- <cylinder radius="0.1" length="0.4"/> -->
-            <mesh filename="package://rtab/models/green_shell.dae"/> 
+            <mesh filename="package://rtab/models/green_shell.dae"/>
         </geometry>
     </visual>
 
@@ -278,8 +278,8 @@
     <!--    <parent link="chassis"/>-->
     <!--    <child link="camera"/>-->
     <!--</joint>-->
-    
-    <link name="kinect">
+
+    <link name="camera_link">
         <inertial>
             <xacro:zero_origin/>
             <!--<mass value="${min_mass}"/>-->
@@ -288,7 +288,7 @@
         </inertial>
         <collision>
             <xacro:zero_origin/>
-            <xacro:generate_geometry shape="box" x="0.05" y="0.05" z="0.05"/>
+            <xacro:generate_geometry shape="box" x="0.07" y="0.3" z="0.069"/>
         </collision>
         <visual>
             <xacro:zero_origin/>
@@ -303,8 +303,40 @@
     <joint name="camera_joint" type="fixed">
         <origin xyz="0.2 0 0" rpy="0 0 0"/>
         <parent link="chassis"/>
-        <child link="kinect"/>
+        <child link="camera_link"/>
     </joint>
+
+    <!-- Kinect RGB Camera Frame -->
+    <link name="camera_rgb_frame"/>
+    <joint name="camera_rgb_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.571 0 -1.571"/>
+      <parent link="camera_link"/>
+      <child link="camera_rgb_frame"/>
+    </joint>
+
+        <!-- Kinect RGB Camera Optical Frame -->
+        <link name="camera_rgb_optical_frame"/>
+        <joint name="camera_rgb_optical_joint" type="fixed">
+          <origin xyz="0 0 0" rpy="-1.571 0 -1.571"/>
+          <parent link="camera_rgb_frame"/>
+          <child link="camera_rgb_optical_frame"/>
+        </joint>
+
+    <!-- Kinect Depth Camera Frame -->
+    <link name="camera_depth_frame"/>
+    <joint name="camera_depth_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="camera_link"/>
+      <child link="camera_depth_frame"/>
+    </joint>
+
+        <!-- Kinect Depth Camera Optical Frame -->
+        <link name="camera_depth_optical_frame"/>
+        <joint name="camera_depth_optical_joint" type="fixed">
+          <origin xyz="0 0 0" rpy="-1.571 0 -1.571"/>
+          <parent link="camera_depth_frame"/>
+          <child link="camera_depth_optical_frame"/>
+        </joint>
 
     <link name="hokuyo">
         <inertial>
