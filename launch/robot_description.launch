@@ -4,7 +4,7 @@
     <!-- NOW DONE IN THE ROBOT'S LAUNCH FILE -->
 
     <!-- send urdf to param server -->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rtab)/urdf/shelly.xacro'" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rtab_shelly)/urdf/shelly.xacro'" />
   
 
     <!--spawn a robot in gazebo world-->

@@ -2,7 +2,7 @@
 
 <launch>
 
-    <include file="$(find rtab)/launch/robot_description.launch"/>
+    <include file="$(find rtab_shelly)/launch/robot_description.launch"/>
 
 
    <!--the empty_world.launch file from the gazebo_ros package. -->
@@ -18,7 +18,7 @@
     <arg name="debug" default="false"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find rtab)/worlds/kitchen_dining.world"/>
+    <arg name="world_name" value="$(find rtab_shelly)/worlds/kitchen_dining.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
@@ -31,7 +31,7 @@
         <!--<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model shelly" clear_params="true" />-->
 
 
-   <!--<include file="$(find rtab)/launch/rviz.launch"/>-->
+   <!--<include file="$(find rtab_shelly)/launch/rviz.launch"/>-->
 
 
 </launch>
