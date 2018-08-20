@@ -19,9 +19,12 @@ alias rlz="roslaunch rtab_shelly rviz.launch"
 alias rlr="roslaunch rtab_shelly reconfig.launch" 
 alias rlg="roslaunch rtab_shelly gui.launch" 
 
-alias rlk="roslaunch rtab_shelly kitchen.launch" 
-alias rlm="roslaunch rtab_shelly mapping.launch" 
-alias rlt="roslaunch rtab_shelly keyboard_teleop.launch" 
+alias cgz="curl -L https://s3-us-west-1.amazonaws.com/udacity-robotics/Term+2+Resources/P3+Resources/models.tar.gz | tar zx -C ~/.gazebo/"
 
-alias rlrskm="rlk; rlm" 
+alias rlw="roslaunch rtab_shelly world.launch" 
+alias rlm="roslaunch rtab_shelly mapping.launch" 
+alias rlkt="roslaunch rtab_shelly keyboard_teleop.launch" 
+alias rlt="roslaunch rtab_shelly teleop.launch" 
+
+alias rlrskm="rlw; rlm" 
 
