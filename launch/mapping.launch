@@ -12,7 +12,7 @@
   <group ns="rtabmap">
   
     <!-- visualization with rtabmapviz -->
-    <include file="$(find rtab_shelly)/launch/rtabmapviz.launch"/>
+    <!-- <include file="$(find rtab_shelly)/launch/rtabmapviz.launch"/> -->
 
 <!--############################################################ -->
 
