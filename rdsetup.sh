@@ -16,8 +16,9 @@ alias rlz="roslaunch rtab_shelly rviz.launch" #
 alias rlr="roslaunch rtab_shelly reconfig.launch" #
 alias rlg="roslaunch rtab_shelly gui.launch" #
 #
-alias rlk="roslaunch rtab_shelly kitchen.launch" #
+alias rlw="roslaunch rtab_shelly world.launch" #
 alias rlm="roslaunch rtab_shelly mapping.launch" #
 alias rlt="roslaunch rtab_shelly keyboard_teleop.launch" #
 #
-alias rlrskm="rlk; rlm" #
+alias rlrskm="rlw; rlm" #
+export GAZEBO_MODEL_DATABASE_URI=http://models.gazebosim.org/ #

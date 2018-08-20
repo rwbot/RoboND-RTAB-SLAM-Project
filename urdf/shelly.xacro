@@ -158,7 +158,8 @@
       <pose>0 0 0 0 0 0</pose>
 
       <inertial>
-          <mass value="15.0"/>
+          <!--<mass value="15.0"/>-->
+          <mass value="1.0"/>
           <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
           <!--  <xacro:default_inertia/> -->
           <xacro:cylinder_inertia/>
@@ -173,7 +174,8 @@
     </collision>
 
     <visual name='chassis_visual'>
-        <xacro:shell_origin/>
+        <!--<xacro:shell_origin/>-->
+        <xacro:cylinder_origin/>
         <geometry>
             <!--<box size=".4 .2 .1"/>-->
             <cylinder radius="0.1" length="0.4"/>
