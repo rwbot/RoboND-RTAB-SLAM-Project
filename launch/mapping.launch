@@ -10,6 +10,12 @@
 
   <!-- Mapping Node -->
   <group ns="rtabmap">
+  
+    <!-- visualization with rtabmapviz -->
+    <include file="$(find rtab_shelly)/launch/rtabmapviz.launch"/>
+
+<!--############################################################ -->
+
     <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="--delete_db_on_start">
 
       <!-- Basic RTAB-Map Parameters -->
