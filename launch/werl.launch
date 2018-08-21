@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+
+
+   <!--the empty_world.launch file from the gazebo_ros package. -->
+   <!--The empty_world file includes a set of important definitions that are inherited by the world that we create. -->
+   <!--Using the world_name argument and the path to your .world file -->
+   <!--passed as the value to that argument, you will be able to launch your world in Gazebo.-->
+
+    <arg name="world" default="empty"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find rtab_shelly)/models/rWorld.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+
+
+
+</launch>
