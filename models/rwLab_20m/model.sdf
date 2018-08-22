@@ -17,65 +17,15 @@
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='ModelPreview_1::Floor_1::visual_1'>
-        <pose frame=''>0 0 0.05 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>11 10 0.1</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/CeilingTiled</name>
-          </script>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-          <specular>0 0 0 1</specular>
-          <emissive>0 0 0 1</emissive>
-          <shader type='vertex'>
-            <normal_map>__default__</normal_map>
-          </shader>
-        </material>
-        <meta>
-          <layer>0</layer>
-        </meta>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
-      </visual>
-      <visual name='ModelPreview_1::Floor_1::visual_2'>
-        <pose frame=''>0 0 0.001 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>11 10 0.1</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/CeilingTiled</name>
-          </script>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-          <specular>0 0 0 1</specular>
-          <emissive>0 0 0 1</emissive>
-          <shader type='vertex'>
-            <normal_map>__default__</normal_map>
-          </shader>
-        </material>
-        <meta>
-          <layer>0</layer>
-        </meta>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
-      </visual>
+      
       <visual name='Floor_1_Visual'>
         <pose frame=''>0 0 0.001 0 -0 0</pose>
         <geometry>
           <box>
-            <size>11 10 0.001</size>
+            <size>20 20 0.006</size>
           </box>
         </geometry>
+        <!--
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -88,6 +38,14 @@
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
           </shader>
+        </material>
+        -->
+        <material>
+          <script>
+            <uri>model://rwLab_20m/materials/scripts</uri>
+            <uri>model://rwLab_20m/materials/textures</uri>
+            <name>rw/tiles</name>
+          </script>
         </material>
         <meta>
           <layer>0</layer>
@@ -101,7 +59,7 @@
         <pose frame=''>0 0 0.001 0 -0 0</pose>
         <geometry>
           <box>
-            <size>11 10 0.001</size>
+            <size>20 20 0.006</size>
           </box>
         </geometry>
         <surface>
@@ -152,7 +110,7 @@
       </collision>
     </link>
     <link name='Wall_12'>
-      <pose frame=''>-5.425 0 0 0 -0 1.5708</pose>
+      <pose frame=''>-10 0 0 0 -0 1.5708</pose>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
@@ -175,6 +133,7 @@
             <size>20 0.15 2.5</size>
           </box>
         </geometry>
+        <!--
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -187,6 +146,14 @@
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
           </shader>
+        </material>
+        -->
+        <material>
+          <script>
+            <uri>model://rwLab_20m/materials/scripts</uri>
+            <uri>model://rwLab_20m/materials/textures</uri>
+            <name>rw/ceramic</name>
+          </script>
         </material>
         <meta>
           <layer>0</layer>
@@ -251,7 +218,7 @@
       </collision>
     </link>
     <link name='Wall_13'>
-      <pose frame=''>0 4.925 0 0 -0 0</pose>
+      <pose frame=''>0 10 0 0 -0 0</pose>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
@@ -274,6 +241,7 @@
             <size>20 0.15 2.5</size>
           </box>
         </geometry>
+        <!--
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -286,6 +254,14 @@
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
           </shader>
+        </material>
+        -->
+        <material>
+          <script>
+            <uri>model://rwLab_20m/materials/scripts</uri>
+            <uri>model://rwLab_20m/materials/textures</uri>
+            <name>rw/brick</name>
+          </script>
         </material>
         <meta>
           <layer>0</layer>
@@ -350,7 +326,7 @@
       </collision>
     </link>
     <link name='Wall_14'>
-      <pose frame=''>5.425 0 0 0 0 -1.5708</pose>
+      <pose frame=''>10 0 0 0 0 -1.5708</pose>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
@@ -373,6 +349,7 @@
             <size>20 0.15 2.5</size>
           </box>
         </geometry>
+        <!--
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -385,6 +362,14 @@
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
           </shader>
+        </material>
+        -->
+        <material>
+          <script>
+            <uri>model://rwLab_20m/materials/scripts</uri>
+            <uri>model://rwLab_20m/materials/textures</uri>
+            <name>rw/hex</name>
+          </script>
         </material>
         <meta>
           <layer>0</layer>
@@ -449,7 +434,7 @@
       </collision>
     </link>
     <link name='Wall_15'>
-      <pose frame=''>0 -4.925 0 0 -0 3.14159</pose>
+      <pose frame=''>0 -10 0 0 -0 3.14159</pose>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <gravity>1</gravity>
@@ -472,6 +457,7 @@
             <size>20 0.15 2.5</size>
           </box>
         </geometry>
+        <!--
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -484,6 +470,14 @@
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
           </shader>
+        </material>
+        -->
+        <material>
+          <script>
+            <uri>model://rwLab_20m/materials/scripts</uri>
+            <uri>model://rwLab_20m/materials/textures</uri>
+            <name>rw/stone</name>
+          </script>
         </material>
         <meta>
           <layer>0</layer>
