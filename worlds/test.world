@@ -86,6 +86,8 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
+
+    
     <model name='rwLab_10m'>
       <link name='Wall_12'>
         <pose frame=''>-5 0 0 0 -0 1.5708</pose>
