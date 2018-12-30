@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+# Manually source this file using:
+#     source /home/user/catkin_ws/src/rtab_shelly/udasetup.sh
+#     source /home/workspace/catkin_ws/src/rtab_shelly/udasetup.sh
 
-# source /home/user/catkin_ws/src/rtab_shelly/udasetup.sh
-# source /home/workspace/catkin_ws/src/rtab_shelly/udasetup.sh
+# for adding models in gazebo
+export GAZEBO_MODEL_PATH=/home/nvidia/catkin_ws/src/rtab_shelly/models
 
 #git config --global credential.helper 'cache --timeout=999999'
 #git config --global user.name 'rwbot'
