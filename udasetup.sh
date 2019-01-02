@@ -27,6 +27,7 @@ alias rlg="roslaunch rtab_shelly gui.launch"
 alias cgz="curl -L https://s3-us-west-1.amazonaws.com/udacity-robotics/Term+2+Resources/P3+Resources/models.tar.gz | tar zx -C ~/.gazebo/"
 
 alias rlw="roslaunch rtab_shelly world.launch" 
+alias rlrw="roslaunch rtab_shelly rw.launch" 
 alias rlm="roslaunch rtab_shelly mapping.launch" 
 alias rlkt="roslaunch rtab_shelly keyboard_teleop.launch" 
 alias rlt="roslaunch rtab_shelly teleop.launch" 

@@ -24,8 +24,5 @@
     <arg name="headless" value="$(arg headless)"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
-
-
-
-
+  
 </launch>
