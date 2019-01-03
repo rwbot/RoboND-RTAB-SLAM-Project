@@ -29,8 +29,9 @@ alias cgz="curl -L https://s3-us-west-1.amazonaws.com/udacity-robotics/Term+2+Re
 alias rlw="roslaunch rtab_shelly world.launch" 
 alias rlrw="roslaunch rtab_shelly rw.launch" 
 alias rlm="roslaunch rtab_shelly mapping.launch" 
-alias rlkt="roslaunch rtab_shelly keyboard_teleop.launch" 
+alias rltt="roslaunch rtab_shelly turtle_teleop.launch" 
 alias rlt="roslaunch rtab_shelly teleop.launch" 
 
-alias rlrskm="rlw; rlm" 
+alias rlwm="rlw; rlm" 
+alias rlrwm="rlrw; rlm" 
 

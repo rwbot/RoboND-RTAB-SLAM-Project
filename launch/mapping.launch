@@ -12,7 +12,7 @@
   <group ns="rtabmap">
   
     <!-- visualization with rtabmapviz -->
-    <!-- <include file="$(find rtab_shelly)/launch/rtabmapviz.launch"/> -->
+    <include file="$(find rtab_shelly)/launch/rtabmapviz.launch"/>
 
 <!--############################################################ -->
 
@@ -25,7 +25,9 @@
       <param name="subscribe_depth"     type="bool"   value="true"/>
       <param name="subscribe_scan"      type="bool"   value="true"/>
 
-      <param name="queue_size"  value="20"/> <!-- d=10 -->
+     
+     <param name="queue_size"  value="20"/>   <!-- d=10 --> 
+     
 
       <!-- RTAB-Map Inputs -->
       <remap from="scan"            to="/shelly/laser/scan"/>
@@ -44,13 +46,13 @@
 
       <!-- Loop Closure Detection -->
     <!-- 0=SURF 1=SIFT 2=ORB 3=FAST/FREAK 4=FAST/BRIEF 5=GFTT/FREAK 6=GFTT/BRIEF 7=BRISK 8=GFTT/ORB 9=KAZE -->
-<param name="Kp/DetectorStrategy" type="string" value="0"/>
+    <param name="Kp/DetectorStrategy" type="string" value="0"/>
 
-<!-- Maximum visual words per image (bag-of-words) -->
-          <param name="Kp/MaxFeatures" type="string" value="400"/>
+    <!-- Maximum visual words per image (bag-of-words) -->
+    <param name="Kp/MaxFeatures" type="string" value="400"/>
 
-      <!-- Used to extract more or less SURF features -->
-               <param name="SURF/HessianThreshold" type="string" value="100"/>
+    <!-- Used to extract more or less SURF features -->
+    <param name="SURF/HessianThreshold" type="string" value="100"/>
 
   <!-- Loop Closure Constraint -->
 <!-- 0=Visual, 1=ICP (1 requires scan)-->

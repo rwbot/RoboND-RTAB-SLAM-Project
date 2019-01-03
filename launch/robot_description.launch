@@ -4,11 +4,12 @@
     <!-- NOW DONE IN THE ROBOT'S LAUNCH FILE -->
 
     <!-- send urdf to param server -->
-    <!-- <param name="robot_description" command="$(find xacro)/xacro -###-inorder '$(find rtab_shelly)/urdf/shelly.xacro'" /> -->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find udacity_bot)/urdf/udacity_bot.xacro'" />
-  
-    <arg name="x" default="2"/>
-    <arg name="y" default="2"/>
+     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rtab_shelly)/urdf/shelly.xacro'" /> 
+    <!--
+    <param name="robot_description" command="$(find xacro)/xacro -###-inorder '$(find udacity_bot)/urdf/udacity_bot.xacro'" />
+  -->
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
     <arg name="z" default="0"/>
     <arg name="roll" default="0"/>
     <arg name="pitch" default="0"/>
