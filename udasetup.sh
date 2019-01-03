@@ -34,4 +34,4 @@ alias rlt="roslaunch rtab_shelly teleop.launch"
 
 alias rlwm="rlw; rlm" 
 alias rlrwm="rlrw; rlm" 
-
+alias rr="~/catkin_ws/src/rtab_shelly/src/rtab_run"

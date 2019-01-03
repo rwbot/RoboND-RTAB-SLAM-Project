@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-
-    <include file="$(find rtab_shelly)/launch/robot_description.launch"/>
+    
+    <include file="$(find rtab_shelly)/launch/robot_description.launch">
+        <arg name="y" default="2"/>
+    </include>
 
    <!--the empty_world.launch file from the gazebo_ros package. -->
    <!--The empty_world file includes a set of important definitions that are inherited by the world that we create. -->
