@@ -8,6 +8,7 @@
     <!--
     <param name="robot_description" command="$(find xacro)/xacro -###-inorder '$(find udacity_bot)/urdf/udacity_bot.xacro'" />
   -->
+
     <arg name="x" default="0"/>
     <arg name="y" default="0"/>
     <arg name="z" default="0"/>
