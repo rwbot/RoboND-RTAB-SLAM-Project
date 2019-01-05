@@ -175,11 +175,11 @@
 
     <visual name='chassis_visual'>
         <!--<xacro:shell_origin/>-->
-        <xacro:cylinder_origin/>
+        <xacro:shell_origin/>
         <geometry>
             <!--<box size=".4 .2 .1"/>-->
-            <cylinder radius="0.1" length="0.4"/>
-            <!-- <mesh filename="package://rtab_shelly/models/green_shell.dae"/> -->
+            <!--<cylinder radius="0.1" length="0.4"/>-->
+            <mesh filename="package://rtab_shelly/models/green_shell.dae"/>
         </geometry>
     </visual>
 
@@ -353,21 +353,18 @@
         </inertial>
         <collision>
             <xacro:zero_origin/>
-            <xacro:generate_geometry shape="box" x="0.1" y="0.1" z="0.1"/>
+            <xacro:generate_geometry shape="box" x="0.01" y="0.01" z="0.01"/> 
         </collision>
         <visual>
             <xacro:zero_origin/>
-            <xacro:generate_geometry shape="sphere" radius="0.001"/>
-            <!--
             <geometry>
-                <mesh filename="package://rtab_shelly/models/meshes/hokuyo.dae"/>
+                <mesh filename="package://rtab_shelly/models/hokuyo.dae"/>
             </geometry>
-            -->
         </visual>
     </link>
 
     <joint name="hokuyo_joint" type="fixed">
-        <origin xyz="0 0 0.2" rpy="0 0 0"/>
+        <origin xyz="0 0 0.3" rpy="0 0 0"/> <!-- for shell -->
         <parent link="chassis"/>
         <child link="hokuyo"/>
     </joint>

@@ -80,424 +80,19 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    <model name='rwLab_10m'>
-      <link name='Wall_12'>
-        <pose frame=''>-5 0 0 0 -0 1.5708</pose>
-        <inertial>
-          <mass>1</mass>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <visual name='Wall_12_Visual'>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>10 0.15 2.5</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://rwLab_10m/materials/scripts</uri>
-              <uri>model://rwLab_10m/materials/textures</uri>
-              <name>rw/ceramic</name>
-            </script>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
-            <shader type='vertex'>
-              <normal_map>__default__</normal_map>
-            </shader>
-          </material>
-          <meta>
-            <layer>0</layer>
-          </meta>
-          <cast_shadows>1</cast_shadows>
-          <transparency>0</transparency>
-        </visual>
-        <collision name='Wall_12_Collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>10 0.15 2.5</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <gravity>1</gravity>
-      </link>
-      <link name='Wall_13'>
-        <pose frame=''>0 5 0 0 -0 0</pose>
-        <inertial>
-          <mass>1</mass>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <visual name='Wall_13_Visual'>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>10 0.15 2.5</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://rwLab_10m/materials/scripts</uri>
-              <uri>model://rwLab_10m/materials/textures</uri>
-              <name>rw/brick</name>
-            </script>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
-            <shader type='vertex'>
-              <normal_map>__default__</normal_map>
-            </shader>
-          </material>
-          <meta>
-            <layer>0</layer>
-          </meta>
-          <cast_shadows>1</cast_shadows>
-          <transparency>0</transparency>
-        </visual>
-        <collision name='Wall_13_Collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>10 0.15 2.5</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <gravity>1</gravity>
-      </link>
-      <link name='Wall_14'>
-        <pose frame=''>5 0 0 0 0 -1.5708</pose>
-        <inertial>
-          <mass>1</mass>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <visual name='Wall_14_Visual'>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>10 0.15 2.5</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://rwLab_10m/materials/scripts</uri>
-              <uri>model://rwLab_10m/materials/textures</uri>
-              <name>rw/hex</name>
-            </script>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
-            <shader type='vertex'>
-              <normal_map>__default__</normal_map>
-            </shader>
-          </material>
-          <meta>
-            <layer>0</layer>
-          </meta>
-          <cast_shadows>1</cast_shadows>
-          <transparency>0</transparency>
-        </visual>
-        <collision name='Wall_14_Collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>10 0.15 2.5</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <gravity>1</gravity>
-      </link>
-      <link name='Wall_15'>
-        <pose frame=''>0 -5 0 0 -0 3.14159</pose>
-        <inertial>
-          <mass>1</mass>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <visual name='Wall_15_Visual'>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>10 0.15 2.5</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://rwLab_10m/materials/scripts</uri>
-              <uri>model://rwLab_10m/materials/textures</uri>
-              <name>rw/stone</name>
-            </script>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
-            <shader type='vertex'>
-              <normal_map>__default__</normal_map>
-            </shader>
-          </material>
-          <meta>
-            <layer>0</layer>
-          </meta>
-          <cast_shadows>1</cast_shadows>
-          <transparency>0</transparency>
-        </visual>
-        <collision name='Wall_15_Collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 1.25 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>10 0.15 2.5</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-        <gravity>1</gravity>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>0.063132 -0.032079 0 0 -0 0</pose>
-    </model>
     <state world_name='default'>
-      <sim_time>3033 955000000</sim_time>
-      <real_time>37 343169979</real_time>
-      <wall_time>1546557042 678930498</wall_time>
-      <iterations>35166</iterations>
+      <sim_time>3125 212000000</sim_time>
+      <real_time>97 464376693</real_time>
+      <wall_time>1546726482 712671020</wall_time>
+      <iterations>85555</iterations>
       <model name='Construction Barrel'>
-        <pose frame=''>2.28138 4.33227 -2e-06 7e-06 -4e-06 1.11097</pose>
+        <pose frame=''>2.28138 4.33227 0 0 -0 1.11096</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>2.28138 4.33227 -2e-06 7e-06 -4e-06 1.11097</pose>
+          <pose frame=''>2.28138 4.33227 0 0 -0 1.11096</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>2.61317 -1.35338 -3.1751 -2.89975 0.249746 -4.3e-05</acceleration>
-          <wrench>1306.58 -676.689 -1587.55 0 -0 0</wrench>
+          <acceleration>-3.55842 5.55987 4.33461 1.80903 -0.52704 3.14068</acceleration>
+          <wrench>-1779.21 2779.94 2167.3 0 -0 0</wrench>
         </link>
       </model>
       <model name='Construction Cone_1'>
@@ -516,8 +111,8 @@
         <link name='link'>
           <pose frame=''>3.94506 -4.00269 0.000917 0 -2e-06 0.517898</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.005243 -0.002985 5e-06 -3.03371 0.580089 6e-06</acceleration>
-          <wrench>-0.005243 -0.002985 5e-06 0 -0 0</wrench>
+          <acceleration>-0.005243 -0.002985 0 -3.03371 0.580092 6e-06</acceleration>
+          <wrench>-0.005243 -0.002985 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='bookshelf'>
@@ -621,13 +216,13 @@
         </link>
       </model>
       <model name='first_2015_trash_can'>
-        <pose frame=''>-4.50269 -1.36252 -2e-06 -3e-06 8e-06 0.848947</pose>
+        <pose frame=''>-4.50267 -1.36253 -2e-06 -6e-06 1e-05 0.849019</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-4.50269 -1.36252 -2e-06 -3e-06 8e-06 0.848947</pose>
+          <pose frame=''>-4.50267 -1.36253 -2e-06 -6e-06 1e-05 0.849019</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>4.78039 4.07446 5.03122 1.47193 0.384894 0.040168</acceleration>
-          <wrench>23.0929 19.6828 24.3046 0 -0 0</wrench>
+          <acceleration>4.06832 3.38733 3.20292 -3.01958 -1.48092 -0.108922</acceleration>
+          <wrench>19.6531 16.3634 15.4725 0 -0 0</wrench>
         </link>
       </model>
       <model name='fountain'>
@@ -641,10 +236,10 @@
         </link>
       </model>
       <model name='grey_tote'>
-        <pose frame=''>-4.57986 -0.750844 0.000566 0 -0 1.61166</pose>
+        <pose frame=''>-4.57978 -0.75089 0.000566 0 -0 1.6114</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-4.57986 -0.750844 0.000566 0 -0 1.61166</pose>
+          <pose frame=''>-4.57978 -0.75089 0.000566 0 -0 1.6114</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -671,98 +266,98 @@
         </link>
       </model>
       <model name='polaris_ranger_ev'>
-        <pose frame=''>-0.202227 -0.117216 -4.3e-05 -0 4.9e-05 -0.090642</pose>
+        <pose frame=''>-0.330388 -0.146325 -5.2e-05 1e-06 4.8e-05 -0.144197</pose>
         <scale>1 1 1</scale>
         <link name='brake_pedal'>
-          <pose frame=''>0.433035 0.096157 0.535938 -2e-06 -0.99995 -0.090641</pose>
-          <velocity>0.000293 -0.001465 0.003154 0.000604 0.005139 -0.000433</velocity>
-          <acceleration>5.03573 -0.548638 8.44027 0.233473 0.855119 0.661988</acceleration>
-          <wrench>0.503573 -0.054864 0.844027 0 -0 0</wrench>
+          <pose frame=''>0.294876 0.035715 0.548365 -0 -0.999951 -0.144197</pose>
+          <velocity>-0.005392 -0.000352 -0.006241 0.000222 -0.002012 -0.001023</velocity>
+          <acceleration>-3.58828 0.528824 -6.04436 3.06997 -1.5436 3.03762</acceleration>
+          <wrench>-0.358828 0.052882 -0.604436 0 -0 0</wrench>
         </link>
         <link name='chassis'>
-          <pose frame=''>-0.202227 -0.117216 -4.3e-05 -0 4.9e-05 -0.090642</pose>
-          <velocity>-0.001171 -0.000943 0.005482 0.000629 0.005032 -0.000458</velocity>
-          <acceleration>-0.294518 -0.556204 13.9839 -1.48619 0.691157 0.600089</acceleration>
-          <wrench>-212.053 -400.467 10068.4 0 -0 0</wrench>
+          <pose frame=''>-0.330388 -0.146325 -5.2e-05 1e-06 4.8e-05 -0.144197</pose>
+          <velocity>-0.002932 9.4e-05 -0.008524 0.000169 -0.001821 -0.000981</velocity>
+          <acceleration>0.026547 0.002486 -8.77707 0.364163 -1.36619 -0.016374</acceleration>
+          <wrench>19.1137 1.7896 -6319.49 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel'>
-          <pose frame=''>0.870574 0.387485 0.320002 1.57081 -0.539794 -0.017531</pose>
-          <velocity>0.000581 -0.001909 0.011044 0.005966 0.001808 0.000112</velocity>
-          <acceleration>1.89571 0.451038 36.6393 0.077875 1.45103 2.8412</acceleration>
-          <wrench>22.7486 5.41245 439.671 0 -0 0</wrench>
+          <pose frame=''>0.766722 0.300302 0.319976 1.57081 -0.7779 -0.059383</pose>
+          <velocity>-0.003468 -0.001679 -0.025815 -0.000757 -0.007608 -0.001397</velocity>
+          <acceleration>-0.920913 -0.121149 -36.8401 0.658696 0.334353 -2.27362</acceleration>
+          <wrench>-11.051 -1.45379 -442.081 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel_steering_block'>
-          <pose frame=''>0.868821 0.2875 0.320027 1.57081 4.9e-05 -0.017528</pose>
-          <velocity>0.000649 -0.001961 0.013884 0.003618 0.004986 0.000576</velocity>
-          <acceleration>2.16194 0.476267 44.5938 -1.32089 0.489924 1.5592</acceleration>
-          <wrench>2.16194 0.476267 44.5938 0 -0 0</wrench>
+          <pose frame=''>0.760788 0.200478 0.319996 1.57081 4.8e-05 -0.059377</pose>
+          <velocity>-0.003676 -0.001737 -0.03097 -0.001466 -0.001738 -0.001079</velocity>
+          <acceleration>-1.12302 -0.106313 -44.6932 1.64363 -1.05967 -0.524132</acceleration>
+          <wrench>-1.12302 -0.106313 -44.6932 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel'>
-          <pose frame=''>0.814469 -0.801623 0.320002 -1.57091 -1.47671 -2.7714</pose>
-          <velocity>0.000272 -0.002016 0.010907 0.006296 0.000865 -0.000259</velocity>
-          <acceleration>2.08967 0.52479 37.3409 0.243551 -0.552573 -0.230936</acceleration>
-          <wrench>25.076 6.29748 448.091 0 -0 0</wrench>
+          <pose frame=''>0.636116 -0.887317 0.319975 -1.57081 -0.787477 -2.95014</pose>
+          <velocity>-0.005159 -0.001521 -0.026616 0.004812 -0.020325 -0.009209</velocity>
+          <acceleration>0.715376 0.01295 -37.1173 0.025419 0.00506 1.16664</acceleration>
+          <wrench>8.58451 0.155395 -445.408 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel_steering_block'>
-          <pose frame=''>0.7783 -0.708392 0.32003 1.57081 4.4e-05 0.370075</pose>
-          <velocity>0.000393 -0.002055 0.014011 0.001245 0.005233 -0.00085</velocity>
-          <acceleration>2.33901 0.671161 45.698 -1.52042 -0.237768 -2.09406</acceleration>
-          <wrench>2.33901 0.671161 45.698 0 -0 0</wrench>
+          <pose frame=''>0.61709 -0.789144 0.319997 1.57081 4.5e-05 0.191434</pose>
+          <velocity>-0.004377 -0.001405 -0.031878 0.002239 -0.001383 -0.008589</velocity>
+          <acceleration>0.144988 -0.84463 -45.0064 1.05128 -1.00004 -2.70976</acceleration>
+          <wrench>0.144988 -0.84463 -45.0064 0 -0 0</wrench>
         </link>
         <link name='gas_pedal'>
-          <pose frame=''>0.367692 -0.02844 0.530411 -1e-06 -0.99995 -0.090641</pose>
-          <velocity>0.000819 -0.001479 0.003348 0.000639 0.005079 -0.00045</velocity>
-          <acceleration>6.60947 -0.699498 6.64502 0.330269 0.685145 0.616023</acceleration>
-          <wrench>0.660947 -0.06995 0.664502 0 -0 0</wrench>
+          <pose frame=''>0.255665 -0.089954 0.518074 1e-06 -0.999951 -0.144197</pose>
+          <velocity>-0.005725 -0.000295 -0.005439 0.000167 -0.001916 -0.000994</velocity>
+          <acceleration>-4.23152 0.586585 -4.27146 -0.158736 -1.45069 -0.058416</acceleration>
+          <wrench>-0.423152 0.058659 -0.427146 0 -0 0</wrench>
         </link>
         <link name='hand_brake'>
-          <pose frame=''>0.295772 -0.16248 1.04993 3.14159 -0.058451 3.05095</pose>
-          <velocity>0.004135 -0.001849 0.002882 -0.00016 -0.003729 -0.000452</velocity>
-          <acceleration>5.96387 -0.481374 10.4461 -1.25982 -0.816932 0.639374</acceleration>
-          <wrench>5.96387 -0.481374 10.4461 0 -0 0</wrench>
+          <pose frame=''>0.164473 -0.218181 1.04992 3.14159 -0.058462 2.99739</pose>
+          <velocity>-0.004996 -0.000547 -0.007516 0.001302 0.005984 -0.000981</velocity>
+          <acceleration>-1.17925 0.161272 -7.95336 -2.84526 1.22018 3.12433</acceleration>
+          <wrench>-1.17925 0.161272 -7.95336 0 -0 0</wrench>
         </link>
         <link name='rear_left_wheel'>
-          <pose frame=''>-0.994411 0.557261 0.32 1.57081 -0.833541 -0.090645</pose>
-          <velocity>0.000771 -0.000376 0.009768 0.001173 0.002423 -0.000199</velocity>
-          <acceleration>1.57678 -0.477786 19.9054 -1.8021 1.28654 -1.08933</acceleration>
-          <wrench>18.9213 -5.73344 238.864 0 -0 0</wrench>
+          <pose frame=''>-1.08533 0.56959 0.319991 1.57081 -1.11543 -0.144203</pose>
+          <velocity>-0.002887 0.000544 -0.010132 -0.001435 -0.007865 -0.001139</velocity>
+          <acceleration>-0.476853 -0.002906 -10.3137 0.329836 -0.04789 -0.606965</acceleration>
+          <wrench>-5.72223 -0.03487 -123.764 0 -0 0</wrench>
         </link>
         <link name='rear_right_wheel'>
-          <pose frame=''>-1.10303 -0.637813 0.32 -1.57081 -1.28071 3.05097</pose>
-          <velocity>0.00023 -0.000618 0.01004 0.001932 0.000733 -0.000206</velocity>
-          <acceleration>2.31165 -0.924725 20.4686 -0.490436 0.200303 -1.16269</acceleration>
-          <wrench>27.7398 -11.0967 245.623 0 -0 0</wrench>
+          <pose frame=''>-1.25777 -0.617957 0.31999 -1.5708 -0.80602 2.9974</pose>
+          <velocity>-0.004061 0.000809 -0.010474 -0.002258 -0.011387 -0.001116</velocity>
+          <acceleration>-0.525544 -0.001212 -10.6708 0.332116 -0.048223 -0.535057</acceleration>
+          <wrench>-6.30653 -0.014549 -128.05 0 -0 0</wrench>
         </link>
         <link name='steering_wheel'>
-          <pose frame=''>0.193469 0.148056 1.19994 -0.258687 -0.76499 0.283905</pose>
-          <velocity>0.005038 -0.001895 0.003601 5.1e-05 0.00513 0.000155</velocity>
-          <acceleration>7.89034 -0.735826 11.201 1.49499 0.577154 1.12636</acceleration>
-          <wrench>7.89034 -0.735826 11.201 0 -0 0</wrench>
+          <pose frame=''>0.078939 0.097385 1.19993 -0.320027 -0.745002 0.322476</pose>
+          <velocity>-0.004974 -0.000488 -0.00763 -0.000769 -0.001769 -2.7e-05</velocity>
+          <acceleration>-1.67922 0.236346 -8.12081 -0.248435 -1.42048 -0.070823</acceleration>
+          <wrench>-1.67922 0.236346 -8.12081 0 -0 0</wrench>
         </link>
       </model>
-      <model name='rwLab_10m'>
-        <pose frame=''>0.06313 -0.032079 0 0 -0 0</pose>
+      <model name='rwLab'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='Wall_12'>
-          <pose frame=''>-4.93687 -0.032079 0 0 -0 1.5708</pose>
+          <pose frame=''>-5 0 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_13'>
-          <pose frame=''>0.063132 4.96792 0 0 -0 0</pose>
+          <pose frame=''>0 5 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_14'>
-          <pose frame=''>5.06313 -0.032079 0 0 0 -1.5708</pose>
+          <pose frame=''>5 0 0 0 0 -1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_15'>
-          <pose frame=''>0.063132 -5.03208 0 0 -0 3.14159</pose>
+          <pose frame=''>0 -5 0 0 -0 3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -3772,6 +3367,411 @@
         </axis>
       </joint>
       <pose frame=''>-9.66597 -1.28411 0 0 -0 0</pose>
+    </model>
+    <model name='rwLab'>
+      <link name='Wall_12'>
+        <pose frame=''>-5 0 0 0 -0 1.5708</pose>
+        <inertial>
+          <mass>1</mass>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <visual name='Wall_12_Visual'>
+          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>10 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://rwLab/materials/scripts</uri>
+              <uri>model://rwLab/materials/textures</uri>
+              <name>rw/ceramic</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <emissive>0 0 0 1</emissive>
+            <shader type='vertex'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <collision name='Wall_12_Collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>10 0.15 2.5</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_13'>
+        <pose frame=''>0 5 0 0 -0 0</pose>
+        <inertial>
+          <mass>1</mass>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <visual name='Wall_13_Visual'>
+          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>10 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://rwLab/materials/scripts</uri>
+              <uri>model://rwLab/materials/textures</uri>
+              <name>rw/brick</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <emissive>0 0 0 1</emissive>
+            <shader type='vertex'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <collision name='Wall_13_Collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>10 0.15 2.5</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_14'>
+        <pose frame=''>5 0 0 0 0 -1.5708</pose>
+        <inertial>
+          <mass>1</mass>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <visual name='Wall_14_Visual'>
+          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>10 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://rwLab/materials/scripts</uri>
+              <uri>model://rwLab/materials/textures</uri>
+              <name>rw/hex</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <emissive>0 0 0 1</emissive>
+            <shader type='vertex'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <collision name='Wall_14_Collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>10 0.15 2.5</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_15'>
+        <pose frame=''>0 -5 0 0 -0 3.14159</pose>
+        <inertial>
+          <mass>1</mass>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <visual name='Wall_15_Visual'>
+          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>10 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://rwLab/materials/scripts</uri>
+              <uri>model://rwLab/materials/textures</uri>
+              <name>rw/stone</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <emissive>0 0 0 1</emissive>
+            <shader type='vertex'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <collision name='Wall_15_Collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>10 0.15 2.5</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+        <gravity>1</gravity>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose frame=''>0.125146 -0.060275 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
